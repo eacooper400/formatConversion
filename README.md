@@ -3,8 +3,7 @@ A collection of Perl scripts that can convert between various SNP file
 formats.
 
 ## Details on Formats Used in these Scripts
-1.  **catalog**: 
-A .tsv format file created by the program
+1.  **catalog**:  A .tsv format file created by the program
 ![Stacks](http://catchenlab.life.illinois.edu/stacks/).  Use with
 RADseq or GBS data.
 
@@ -61,25 +60,25 @@ Converts the tags file created by Stacks into a fasta file (where each
 tag is a separate sequence or "chromosome.")  This can be used as a
 reference sequence or to call SNPs with external programs.
 
-	```perl
-	./catalog2fasta.pl <input.tsv> <output.fasta>
-		input.tsv = A tsv format file create by Stacks
-		output.fasta = The name of the fasta format file to create
-	```
+```perl
+./catalog2fasta.pl <input.tsv> <output.fasta>
+	input.tsv = A tsv format file create by Stacks
+	output.fasta = The name of the fasta format file to create
+```
 
 ###### fastPhase2hmp.pl
 Converts the imputed genotypes output by fastPHASE (in the
 _genotypes.out file) back into a HapMap format file.
 
 ```perl
-	/fastPhase2hmp.pl <phase.inp> <genotypes.out> <chr> <Remove Low Confidence? (Y/N)> <new.hmp.txt>
+./fastPhase2hmp.pl <phase.inp> <genotypes.out> <chr> <Remove Low Confidence? (Y/N)> <new.hmp.txt>
 
 	phase.inp = The  original fastPHASE input file (need this to get the positions),
 	genotypes.out = The genotypes out file from fastPHASE,
 	chr = Chromosome Number (only 1 chromosome at a time)
 	Remove Low Confidence = Enter Y if you want to replace bracketed (low confidence) genotypes with missing values; enter N to keep all imputed genotype calls regardless of confidence.
 	new.hmp.txt = A name for the new hapmap file to create
-	```
+```
 
 ###### fastq2fasta.pl
 Coverts Fastq format sequences to Fasta (essentially just removes
@@ -88,7 +87,7 @@ lines with the quality scores).
 ```perl
 ./fastq2fasta.pl input.fastq
 	input.fastq = The name of the input .fastq file.  The output .fasta file will automatically have the same prefix as this input file
-	```
+```
 
 ###### hmp2diploid.pl
 Converts a hapmap format SNP file into a diploid genotypes format that
@@ -104,7 +103,7 @@ Disequilibrium analysis in R.
 		chr = The chromosome to extract genotypes from
 		start = The start position of the region to extract genotypes from
 		end = The end position of the region to extract genotypes from
-		```
+```
 
 ###### hmp2fastPHASE.pl
 Converts the HapMap format SNPs into an input format that can be read
@@ -116,7 +115,7 @@ by the program fastPHASE.
 	input.hmp.txt = An input file in the TASSEL hapmap format
 	output.phase.inp = The name of the fastPHASE input file to be
 	created
-	```
+```
 
 ###### hmp2linkage.pl
 Uses a hapmap file to create an input file that can be read by the
@@ -136,7 +135,7 @@ codes.  0=homozygous REF; 1=heterozygous; 2=homozygous ALT.
 ./hmp2numeric.pl <input.hmp.txt> <output.txt>
 	input.hmp.txt = The name of the input file in hapmap format
 	output.txt = The name of the output file to create with numeric SNP codes
-	```
+```
 
 ###### hmp2structure.pl
 Creates an file in the input format required by STRUCTURE from a
@@ -156,7 +155,7 @@ desired model to run in STRUCTURE.
 		If used, the file should be tab delimited, with individual names in column 1 and integers indicating population assignments in the second column
 	locData = (Optional) A file indicating location (or phenotype) information for each individual; Type <NA> if not desired
 		Same format as the popData file
-		```
+```
 
 ###### im2migrate.pl
 Convets the input file for the IM (Isolation-with-Migration) program
@@ -165,7 +164,7 @@ case that you may want to test estimates from both programs, this is a
 useful way to convert data quickly into a new input file.
 
 ```perl
-/im2migrate.pl <input.ima2> <output.migrate>
+./im2migrate.pl <input.ima2> <output.migrate>
 	input.ima2 = The input file in IMa2 format
 	output.migrate = The output file to create, in MIGRATE required input format
 ```
@@ -188,7 +187,7 @@ Converts the Plink .ped and .map files into a single HapMap file.
 	input.ped = The input .ped file from Plink
 	input.map = The input .map file from Plink
 	output.hmp.txt = The name of the hapmap file to create
-	```
+```
 	
 ###### sam2fastq.pl
 Extracts the reads and quality strings from a SAM file and outputs
