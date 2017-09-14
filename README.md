@@ -3,7 +3,8 @@ A collection of Perl scripts that can convert between various SNP file
 formats.
 
 ## Details on Formats Used in these Scripts
-1.  **catalog**: A .tsv format file created by the program
+1.  **catalog**: 
+A .tsv format file created by the program
 ![Stacks](http://catchenlab.life.illinois.edu/stacks/).  Use with
 RADseq or GBS data.
 
