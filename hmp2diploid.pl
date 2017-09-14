@@ -62,7 +62,7 @@ while (<IN>) {
     if ($code =~ /N/) {
       $diploid_string .= "NA,";
     } elsif ($code =~ /[MRWSYK]/) {
-      $diploid_string .= $info[1] . "/" . $info[2] . ",";
+      $diploid_string .= $info[1];
     } else {
       $diploid_string .= $code . "/" . $code . ",";
     }
