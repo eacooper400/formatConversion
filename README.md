@@ -60,7 +60,7 @@ Converts the tags file created by Stacks into a fasta file (where each
 tag is a separate sequence or "chromosome.")  This can be used as a
 reference sequence or to call SNPs with external programs.
 
-```perl
+```bash
 ./catalog2fasta.pl <input.tsv> <output.fasta>
 	input.tsv = A tsv format file create by Stacks
 	output.fasta = The name of the fasta format file to create
@@ -70,7 +70,7 @@ reference sequence or to call SNPs with external programs.
 Converts the imputed genotypes output by fastPHASE (in the
 _genotypes.out file) back into a HapMap format file.
 
-```perl
+```bash
 ./fastPhase2hmp.pl <phase.inp> <genotypes.out> <chr> <Remove Low Confidence? (Y/N)> <new.hmp.txt>
 
 	phase.inp = The  original fastPHASE input file (need this to get the positions),
@@ -84,7 +84,7 @@ _genotypes.out file) back into a HapMap format file.
 Coverts Fastq format sequences to Fasta (essentially just removes
 lines with the quality scores).
 
-```perl
+```bash
 ./fastq2fasta.pl input.fastq
 	input.fastq = The name of the input .fastq file.  The output .fasta file will automatically have the same prefix as this input file
 ```
@@ -96,7 +96,7 @@ specify regions to extract from a hapmap file (rather than converting
 the whole thing), which is especially useful for running the Linkage
 Disequilibrium analysis in R.
 
-```perl
+```bash
 ./hmp2diploid.pl <input.hmp.txt> <output.diploid.txt> <chr> <start> <end>
 		input.hmp.txt = The input file in hapmap format
 		output.diploid.txt = The output file in R genetics format to be created
@@ -109,7 +109,7 @@ Disequilibrium analysis in R.
 Converts the HapMap format SNPs into an input format that can be read
 by the program fastPHASE.
 
-```perl
+```bash
 ./hmp2fastPHASE.pl <input.hmp.txt> <output.phase.inp>
 
 	input.hmp.txt = An input file in the TASSEL hapmap format
@@ -121,7 +121,7 @@ by the program fastPHASE.
 Uses a hapmap file to create an input file that can be read by the
 program HaploView.
 
-```perl
+```bash
 ./hmp2linkage.pl <input.hmp.txt> <output.linkage> <output.markerInfo>
 	input.hmp.txt = An input file in the TASSEL hapmap format
 	output.linkage.txt = The name of the linkage format file to be created
@@ -131,7 +131,7 @@ program HaploView.
 Recodes the genotypes in a Hapmap file to be numeric instead of IUPAC
 codes.  0=homozygous REF; 1=heterozygous; 2=homozygous ALT.
 
-```perl
+```bash
 ./hmp2numeric.pl <input.hmp.txt> <output.txt>
 	input.hmp.txt = The name of the input file in hapmap format
 	output.txt = The name of the output file to create with numeric SNP codes
@@ -142,7 +142,7 @@ Creates an file in the input format required by STRUCTURE from a
 HapMap file.  Includes options for filtering, and specifying the
 desired model to run in STRUCTURE.
 
-```perl
+```bash
 ./hmp2structure.pl <input.hmp.txt> <output.structure> <Min. coverage> <Min. MAF> <Linkage Model?> <popData.txt> <locData.txt>
 
 	input.hmp.txt = An input file in the TASSEL hapmap format
@@ -163,7 +163,7 @@ into an input file for the MIGRATE-N program.  Since it is often the
 case that you may want to test estimates from both programs, this is a
 useful way to convert data quickly into a new input file.
 
-```perl
+```bash
 ./im2migrate.pl <input.ima2> <output.migrate>
 	input.ima2 = The input file in IMa2 format
 	output.migrate = The output file to create, in MIGRATE required input format
@@ -174,7 +174,7 @@ format.  This scripts looks for continuous segments in the reference
 sequence that have mapped reads, and outputs each segment as a single
 sequence in fasta format.
 
-```perl
+```bash
 ./pileup2fasta.pl <input.pileup> <output.fasta>
 	input.pileup = An input file in the pileup format created by Samtools
 	output.fasta = The name of the output file in .fasta format to create
@@ -182,7 +182,7 @@ sequence in fasta format.
 ###### plink2hmp_numeric.pl
 Converts the Plink .ped and .map files into a single HapMap file.
 
-```perl
+```bash
 ./plink2hmp_numeric.pl <input.ped> <input.map> <output.hmp.txt>
 	input.ped = The input .ped file from Plink
 	input.map = The input .map file from Plink
@@ -195,7 +195,7 @@ back into Fastq format.  Useful if you want to extract only mapped
 (or unmapped) reads from a SAM file, and convert them to fastq to use
 in another pipeline.
 
-```perl
+```bash
 ./sam2fastq.pl <input.sam> <output.fastq>
 	input.sam = The input file in .sam format
 	output.fastq = The name of the output file to create
